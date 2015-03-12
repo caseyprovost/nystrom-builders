@@ -5,6 +5,8 @@ deploy:
   provider: heroku
   api_key:
     secure: GJ8BCvp50YSj935CxytvDUg+BcGjDIN+GEKRknJTqaDpGSK5x/SZl7aPg4heowRYyBz1RXf0CdHNmpC2qjP3GBoXrjpF9fUVnLVuYCxfKgE6Uk9rPdXIfXPAOfWxOW6QB/XonpZzuirC5SG5kQVVpq4fiHhyzXhJiqlfOGq9cRc=
-  app: nystrom-builders
+  app:
+    master: nystrom-builders-staging
+    production: nystrom-builders
   on:
     repo: caseyprovost/nystrom-builders
