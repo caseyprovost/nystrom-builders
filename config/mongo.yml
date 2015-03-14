@@ -18,14 +18,8 @@ test:
 
 # set these environment variables on your prod server
 production:
-  <<: *defaults
-  database: nystrom_builders
-  username: <%= ENV['MONGO_USERNAME'] %>
-  password: <%= ENV['MONGO_PASSWORD'] %>
+  uri: <%= ENV['MONGOLAB_URI'] %>
 
 # set these environment variables on your staging server
 staging:
-  <<: *defaults
-  database: nystrom_builders
-  username: <%= ENV['MONGO_USERNAME'] %>
-  password: <%= ENV['MONGO_PASSWORD'] %>
+  uri: <%= ENV['MONGOLAB_URI'] %>

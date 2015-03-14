@@ -1,0 +1,25 @@
+Mark,
+
+A user has requested information on your website, http://www.nystrombuilders-gr.com. The
+information about their request is below:
+
+<p>
+  Name: <%= @contact_request.name %>
+</p>
+<p>
+  Contact Email: <%= @contact_request.email %>
+</p>
+
+<% if @contact_request.company_name? %>
+<p>
+  Company: <%= @contact_request.company_name %>
+</p>
+<% end %>
+
+<div>
+  Message:
+
+  <p>
+    <%= @contact_request.message %>
+  </p>
+</div>
