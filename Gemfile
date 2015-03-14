@@ -22,6 +22,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sanitize'
 
 group :development do
   gem 'better_errors'
