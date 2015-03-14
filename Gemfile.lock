@@ -81,6 +81,9 @@ GEM
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
+    dotenv (2.0.0)
+    dotenv-rails (2.0.0)
+      dotenv (= 2.0.0)
     erubis (2.7.0)
     execjs (2.4.0)
     gherkin (2.12.2)
@@ -214,6 +217,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   cucumber-rails
+  dotenv-rails
   jquery-rails
   mongo_mapper
   rails (= 4.2.0)

@@ -10,6 +10,7 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
 *.DS_Store
 
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
@@ -30,3 +31,7 @@ config/initializers/secret_token.rb
 /vendor/assets/bower_components
 *.bowerrc
 bower.json
+
+.env
+.env.test
+.env.cucumber
