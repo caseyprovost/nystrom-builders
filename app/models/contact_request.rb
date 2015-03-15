@@ -5,7 +5,7 @@ class ContactRequest
   key :last_name, String
   key :company_name, String
   key :email, String
-  key :message, Text
+  key :message, String
 
   validates :first_name, :last_name, presence: true
   validates :email, email: true
