@@ -54,6 +54,8 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get '/:route' => 'errors#not_found'
-  root 'errors#not_found'
+  resource :contact_requests, only: [:new, :create]
+
+  get '/home' => 'pages#home'
+  root 'pages#home'
 end

@@ -10,4 +10,4 @@ Rails.application.config.assets.version = '1.0'
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 
-Rails.application.config.assets.precompile += %w(brokebot.js robot_page.css snap.svg-min.js robot_styles.css)
+Rails.application.config.assets.precompile += %w(brokebot.js robot_page.css snap.svg-min.js robot_styles.css customM.js bootstrap.css)

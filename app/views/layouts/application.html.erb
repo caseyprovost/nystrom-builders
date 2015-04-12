@@ -5,10 +5,29 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!--[if lt IE 9]>
+    <%= javascript_include_tag 'customM' %>
+   <![endif]-->
 </head>
-<body>
 
-<%= yield %>
+<!-- Body Wrapper -->
+<div class="body-wrapper">
+    <!-- Header -->
+      <%= render partial: '/shared/header' %>
+    <!-- /Header -->
 
+    <!-- Content -->
+    <section id="content">
+      <%= yield %>
+    </section>
+    <!-- / Content -->
+
+    <!-- Footer -->
+    <%= render partial: '/shared/footer' %>
+    <!-- / Footer -->
+
+  </div>
+<!-- / Body Wrapper -->
 </body>
 </html>

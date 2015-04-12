@@ -23,11 +23,13 @@ gem 'turbolinks'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sanitize'
+gem 'font-awesome-rails'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'unicorn'
+  gem 'quiet_assets'
 end
 
 group :development, :test do
