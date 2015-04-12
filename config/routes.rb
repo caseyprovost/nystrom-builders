@@ -54,8 +54,12 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  resource :contact_requests, only: [:new, :create]
+  get '/home' => 'pages#home', as: :home
+  get '/commercial-restoration' => 'pages#commercial_restoration', as: :commercial_restoration
+  get '/services' => 'pages#services', as: :services
+  get '/projects' => 'pages#projects', as: :projects
+  get '/contact' => 'contact_requests#new', as: :contact
+  post '/contact' => 'contact_requests#create', as: :create_contact_request
 
-  get '/home' => 'pages#home'
   root 'pages#home'
 end

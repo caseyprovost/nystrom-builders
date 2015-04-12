@@ -178,22 +178,6 @@ jQuery('.percentage').easyPieChart({
 		var shrinkNum = 6;
 
 		if($offset > 100 && $windowWidth >= 1000) {
-
-			jQuery('.topbar .logo img').stop(true,true).animate({
-				'height' : logoHeight*2/3
-			},{queue:false, duration:250, easing: 'easeOutCubic'});
-
-			jQuery('.topbar .logo').stop(true,true).animate({
-				'margin-top' : '15px',
-				'margin-bottom' : '15px'
-			},{queue:false, duration:250, easing: 'easeOutCubic'});
-
-			jQuery('.topbar #nav>ul, .topbar .search-include').stop(true,true).animate({
-				'margin-top' : '10px',
-				'margin-bottom' : '10px'
-			},{queue:false, duration:250, easing: 'easeOutCubic'});
-
-
 			jQuery(window).unbind('scroll',smallNav);
 			jQuery(window).bind('scroll',bigNav);
 		}
@@ -205,22 +189,6 @@ jQuery('.percentage').easyPieChart({
 		var shrinkNum = 6;
 
 		if($offset < 100 && $windowWidth >= 1000) {
-
-			jQuery('.topbar .logo img').stop(true,true).animate({
-				'height' : logoHeight
-			},{queue:false, duration:250, easing: 'easeOutCubic'});
-
-			jQuery('.topbar .logo').stop(true,true).animate({
-				'margin-top' : '30px',
-				'margin-bottom' : '30px'
-			},{queue:false, duration:250, easing: 'easeOutCubic'});
-
-			jQuery('.topbar #nav>ul, .topbar .search-include').stop(true,true).animate({
-				'margin-top' : '30px',
-				'margin-bottom' : '30px'
-			},{queue:false, duration:250, easing: 'easeOutCubic'});
-
-
 			jQuery(window).bind('scroll',smallNav);
 			jQuery(window).unbind('scroll',bigNav);
 		}

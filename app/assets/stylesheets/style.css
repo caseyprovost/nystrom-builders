@@ -137,7 +137,7 @@ html {
 .logo {
   width: 285px;
   float: left;
-  margin: 22px 0 25px 0;
+  margin: 13px 0 3px 0;
 }
 
 .logo > h1 {
@@ -157,7 +157,7 @@ html {
   list-style-type:none;
   width:auto;
   text-align:right;
-  margin:30px 0;
+  margin:20px 0;
   float:right;
 }
 #nav>ul>li{
