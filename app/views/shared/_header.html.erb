@@ -4,7 +4,8 @@
       <div class="container">
         <!-- Logo -->
         <div class="logo">
-          <h1>Nystrom Builders</h1>
+          <h1 style="display: inline-block;">Nystrom Builders</h1>
+          <small>llc</small>
         </div>
         <!-- /Logo -->
 
@@ -12,19 +13,9 @@
         <nav id="nav">
           <!-- Main Menu -->
           <ul class="sf-menu">
-            <li class="current">
-              <a href="index.html">Home</a>
-            </li>
-            <li>
-              <a href="index.html">Commerical Restoration</a>
-            </li>
-            <li>
-              <a href="#">Services</a>
-            </li>
-            <li><a href="about.html">Projects</a></li>
-            <li>
-              <a href="portfolio-4.html">Contact Us</a>
-            </li>
+            <% menu_links.each do |link| %>
+              <%= link.render %>
+            <% end %>
           </ul>
           <!-- /Main Menu -->
 

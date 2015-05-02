@@ -11,11 +11,6 @@
 	opacity: 1;
 }
 
-
-/* ENTRY TITLE ANIMATION */
-.entrytitle h4, .entrytitle p{
-	opacity: 0;
-}
 .entrytitle.mypassion-animation h4{
 	-webkit-animation: mypassion-ltr 1s 1 ease; /* Safari 4+ */ /* linear|ease|ease-in|ease-out|ease-in-out|cubic-bezier(0.175, 0.885, 0.320, 1.275) */
 	-moz-animation:    mypassion-ltr 1s 1 ease; /* Fx 5+ */

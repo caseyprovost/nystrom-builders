@@ -55,11 +55,11 @@ Rails.application.routes.draw do
   #   end
 
   get '/home' => 'pages#home', as: :home
-  get '/commercial-restoration' => 'pages#commercial_restoration', as: :commercial_restoration
+  get '/about' => 'pages#about', as: :about
   get '/services' => 'pages#services', as: :services
   get '/projects' => 'pages#projects', as: :projects
-  get '/contact' => 'contact_requests#new', as: :contact
-  post '/contact' => 'contact_requests#create', as: :create_contact_request
+  get '/quote' => 'contact_requests#new', as: :quote_request
+  post '/quote' => 'contact_requests#create', as: :create_quote_request
 
   root 'pages#home'
 end

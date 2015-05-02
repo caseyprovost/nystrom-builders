@@ -1,25 +1,9 @@
 <div class="mobile-menu">
   <div class="mobile-menu-inner">
     <ul>
-      <li>
-        <a href="index.html">Home</a>
-      </li>
-      <li>
-        <a href="index.html">Headers</a>
-      </li>
-      <li>
-        <a href="about.html">About Us</a>
-      </li>
-      <li>
-        <a href="portfolio-4.html">Portfolio</a>
-      </li>
-      <li>
-        <a href="blog.html">Blog</a>
-      </li>
-      <li>
-        <a href="#">Pages</a>
-      </li>
-      <li><a href="contact.html">Contact</a></li>
+      <% menu_links.each do |link| %>
+        <%= link.render %>
+      <% end %>
     </ul>
   </div>
 </div>

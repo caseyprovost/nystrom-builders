@@ -32,4 +32,5 @@
 //= require sticky
 //= require superfish
 //= require totop
+//= require sugar
 //= require_self

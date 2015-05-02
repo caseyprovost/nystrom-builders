@@ -1,6 +1,7 @@
 class ContactRequestsController < ApplicationController
 
   def new
+    @contact_request = ContactRequest.new
   end
 
   def create

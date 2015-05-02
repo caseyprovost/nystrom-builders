@@ -1,0 +1,36 @@
+<div class="container" style="margin-top: 100px;">
+  <h2 style="margin-bottom: 45px;">Contact Us For a Free Quote</h2>
+
+  <div class="row">
+    <div class="span6">
+      <%= form_for @contact_request, url: create_quote_request_path, method: :post, class: 'form' do |f| %>
+        <div class="form-group">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :job_type %>
+          <%= f.select :job_type, options_for_select(['Commercial', 'Residential']), { include_blank: true }, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :message %>
+          <%= f.text_area :message, rows: 10, class: 'form-control' %>
+        </div>
+
+        <%= f.submit 'Submit Request', style: 'background: #29c06d; color: #FFF; padding: 6px 9px; border-radius: 2px;' %>
+      <% end %>
+    </div>
+  </div>
+</div>

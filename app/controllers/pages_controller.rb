@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def home
   end
 
-  def commercial_restoration
+  def commercial_renovation
   end
 
   def services

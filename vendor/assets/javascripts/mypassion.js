@@ -195,31 +195,6 @@ jQuery('.percentage').easyPieChart({
 	}
 
 // -----------------------------------------------------  CAROUSELS
-	jQuery('#carousel').carouFredSel({
-		auto: {
-			items: 1,
-			timeoutDuration : 8000
-		},
-		width: '100%',
-		prev : {
-			button : "#car_prev",
-			key : "left",
-			items : 1,
-			duration : 750
-		},
-		next : {
-			button : "#car_next",
-			key : "right",
-			items : 1,
-			duration : 750
-		},
-		mousewheel: false,
-		swipe: {
-			onMouse: false,
-			onTouch: true
-		}
-	});
-
 	jQuery('#carousel-2').carouFredSel({
 		auto: {
 			items: 1,
@@ -257,16 +232,21 @@ jQuery('.percentage').easyPieChart({
 // -----------------------------------------------------  PORTFOLIO HOVER EFFECT
 	var currentWindowWidth = jQuery(window).width();
 
-	jQuery('div.maskImage').css({opacity:0, top:0});
-	if(currentWindowWidth >= 979){
-		jQuery('.portfolio-item, .item, .image-wrap').mouseenter(function(e) {
-			jQuery(this).find('.maskImage').animate({ opacity:1}, 200);
-			jQuery(this).find('.maskImage a span').animate({ top:'40%'}, 200);
-		}).mouseleave(function(e) {
-			jQuery(this).find('.maskImage').animate({ opacity:0}, 200);
-			jQuery(this).find('.maskImage a span').animate({ top:-48+"px"}, 200);
-		});
-	}
+  $(document).ready(function() {
+    jQuery('div.maskImage').css({opacity:0, top:0});
+
+    $('.portfolio_blocks_wrap .image-wrap').each(function(index, element) {
+      var imageLink = $(element).find('.image-link');
+      var currentImagePath = imageLink.find('img').attr('src');
+      var hoverImagePath = imageLink.data('before-image');
+
+      $(element).mouseenter(function(e) {
+        imageLink.find('img').attr('src', hoverImagePath);
+      }).mouseleave(function(e) {
+        imageLink.find('img').attr('src', currentImagePath);
+      });
+    });
+  });
 
 // -----------------------------------------------------  SKILLS
 	jQuery('.skill-percent').css({width:'100%'});
