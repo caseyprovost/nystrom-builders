@@ -24,7 +24,6 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sanitize'
 gem 'font-awesome-rails'
-gem 'strong_parameters'
 
 group :development do
   gem 'better_errors'
