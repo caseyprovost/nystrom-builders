@@ -24,12 +24,14 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sanitize'
 gem 'font-awesome-rails'
+gem 'strong_parameters'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'unicorn'
   gem 'quiet_assets'
+  gem 'letter_opener'
 end
 
 group :development, :test do

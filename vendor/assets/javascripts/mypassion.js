@@ -194,33 +194,6 @@ jQuery('.percentage').easyPieChart({
 		}
 	}
 
-// -----------------------------------------------------  CAROUSELS
-	jQuery('#carousel-2').carouFredSel({
-		auto: {
-			items: 1,
-			timeoutDuration : 8000
-		},
-		width: '100%',
-		prev : {
-			button : "#car_prev_2",
-			key : "left",
-			items : 1,
-			duration : 750
-		},
-		next : {
-			button : "#car_next_2",
-			key : "right",
-			items : 1,
-			duration : 750
-		},
-		mousewheel: false,
-		swipe: {
-			onMouse: false,
-			onTouch: true
-		}
-	});
-
-
 // -----------------------------------------------------  UI ELEMENTS
 	jQuery( ".tabs" ).tabs();
 
@@ -233,77 +206,22 @@ jQuery('.percentage').easyPieChart({
 	var currentWindowWidth = jQuery(window).width();
 
   $(document).ready(function() {
-    jQuery('div.maskImage').css({opacity:0, top:0});
+    jQuery('div.maskImage').css({ opacity:0, top:0 });
 
     $('.portfolio_blocks_wrap .image-wrap').each(function(index, element) {
       var imageLink = $(element).find('.image-link');
-      var currentImagePath = imageLink.find('img').attr('src');
-      var hoverImagePath = imageLink.data('before-image');
+      var currentImage = imageLink.find('img[data-timeline="after"]');
+      var hoverImage = imageLink.find('img[data-timeline="before"]');
 
       $(element).mouseenter(function(e) {
-        imageLink.find('img').attr('src', hoverImagePath);
+        currentImage.hide();
+        hoverImage.show();
       }).mouseleave(function(e) {
-        imageLink.find('img').attr('src', currentImagePath);
+        currentImage.show();
+        hoverImage.hide();
       });
     });
   });
-
-// -----------------------------------------------------  SKILLS
-	jQuery('.skill-percent').css({width:'100%'});
-
-	jQuery('.skills li').each(function(){
-		var progressBar = jQuery(this),
-		progressValue = progressBar.find('.skill-percent-back').attr('data-value');
-		if (!progressBar.hasClass('animated')) {
-			progressBar.addClass('animated');
-			progressBar.find('.skill-percent').delay(200).animate({
-				width: progressValue + "%"
-			}, 1200);
-		}
-	});
-
-// -----------------------------------------------------  PROJECT ISOTOPE
-
-
-	function portfolio_iso(){
-		if(jQuery().isotope) {
-			// Needed variables
-			var $container = jQuery("#portfolio-list");
-			var $filter = jQuery("#portfolio-filter");
-
-			// Run Isotope
-			$container.isotope({
-				filter				: '*',
-				layoutMode   		: 'masonry',
-				animationOptions	: {
-				duration			: 750,
-				easing				: 'linear'}
-			});
-
-			// Isotope Filter
-			$filter.find('a').click(function(){
-			  var selector = jQuery(this).attr('data-filter');
-				$container.isotope({
-				filter				: selector,
-				animationOptions	: {
-				duration			: 750,
-				easing				: 'linear',
-				queue				: false}
-			  });
-			  return false;
-			});
-
-			// Copy categories to item classes
-			$filter.find('a').click(function() {
-				$filter.find('a').removeClass('current');
-				jQuery(this).addClass('current');
-			});
-		}
-	}
-
-	portfolio_iso();
-	jQuery(window).resize(function(){portfolio_iso();});
-	jQuery(window).load(function(){portfolio_iso();});
 
 // ----------------------------------------------------- ANIMATIONS
 

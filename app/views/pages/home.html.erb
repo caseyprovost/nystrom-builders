@@ -8,8 +8,7 @@
           </div>
           <h5>Commercial Renovation</h5>
           <p>
-            We will skillfully repair your damaged properties so they are available for renting fast and look
-            nicer than before.
+            We will skillfully mend your damaged or out-dated properties.
           </p>
           <%= link_to 'Read More', '#', class: 'btn-theme' %>
         </div>
@@ -29,7 +28,7 @@
           </div>
           <h5>Property Services</h5>
           <p>
-            Call us if you need new roofs, dry wall, or other work done on your properties.
+            Call us if you need new roofs, dry wall, or anything else.
           </p>
           <a href="#" class="btn-theme">Read More</a>
         </div>
@@ -50,8 +49,9 @@
   <div class="portfolio_blocks_wrap container" id="carousel">
     <div class="item span4">
       <div class="image-wrap">
-        <a href="javascript:void(0)" class="image-link" data-before-image="<%= image_path('project_slides/cooking_fire_before.jpg') %>">
-          <%= image_tag('project_slides/cooking_fire_after.jpg') %>
+        <a href="javascript:void(0)" class="image-link">
+          <%= image_tag('project_slides/cooking_fire_after.jpg', data: { timeline: 'after' }) %>
+          <%= image_tag('project_slides/cooking_fire_before.jpg', data: { timeline: 'before' }, style: 'display: none;') %>
         </a>
       </div>
       <div class="title_holder">
@@ -60,8 +60,9 @@
     </div>
     <div class="item span4">
       <div class="image-wrap">
-        <a href="javascript:void(0)" class="image-link" data-before-image="<%= image_path('project_slides/bathroom_before.jpg') %>">
-          <%= image_tag('project_slides/bathroom_sinks.jpg') %>
+        <a href="javascript:void(0)" class="image-link">
+          <%= image_tag('project_slides/bathroom_sinks.jpg', data: { timeline: 'after' }) %>
+          <%= image_tag('project_slides/bathroom_before.jpg', data: { timeline: 'before' }, style: 'display: none;') %>
         </a>
       </div>
       <div class="title_holder">
@@ -70,8 +71,9 @@
     </div>
     <div class="item span4">
       <div class="image-wrap">
-        <a href="javascript:void(0)" class="image-link" data-before-image="<%= image_path('project_slides/cabinets_before.jpg') %>">
-          <%= image_tag('project_slides/kitchen1_after.jpg') %>
+        <a href="javascript:void(0)" class="image-link">
+          <%= image_tag('project_slides/kitchen1_after.jpg', data: { timeline: 'after' }) %>
+          <%= image_tag('project_slides/cabinets_before.jpg', data: { timeline: 'before' }, style: 'display: none;') %>
         </a>
       </div>
       <div class="title_holder">

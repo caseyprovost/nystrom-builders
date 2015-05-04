@@ -33,4 +33,10 @@
 //= require superfish
 //= require totop
 //= require sugar
+//= require parsley
 //= require_self
+
+$(document).ready(function() {
+  $('form[data-validate="parsley"]').parsley();
+});
+

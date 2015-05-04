@@ -3578,3 +3578,24 @@ ul.children li{
 .form-group textarea.form-control {
   height: auto;
 }
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 0px;
+}
+
+.alert .close {
+  position: relative;
+  top: -3px;
+  right: -8px;
+  line-height: 20px;
+}
+
+.fixed-top {
+  position: fixed;
+  width: 100%;
+  top: 70px;
+  z-index: 999;
+  left: 0;
+}

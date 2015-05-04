@@ -57,7 +57,7 @@ Rails.application.routes.draw do
   get '/home' => 'pages#home', as: :home
   get '/about' => 'pages#about', as: :about
   get '/services' => 'pages#services', as: :services
-  get '/projects' => 'pages#projects', as: :projects
+  #get '/projects' => 'pages#projects', as: :projects
   get '/quote' => 'contact_requests#new', as: :quote_request
   post '/quote' => 'contact_requests#create', as: :create_quote_request
 

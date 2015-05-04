@@ -8,7 +8,11 @@ class ContactRequest
   key :message, String
   key :job_type, String
 
-  validates :first_name, :last_name, presence: true
-  validates :email, with: { format: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
-  validates :message, length: { minimum: 10, maximum: 500 }
+  validates_presence_of :first_name, :last_name
+  validates_format_of :email, with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create
+  validates_length_of :message, minimum: 20
+
+  def name
+    "#{first_name} #{last_name}"
+  end
 end

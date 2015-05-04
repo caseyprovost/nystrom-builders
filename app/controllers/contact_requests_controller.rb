@@ -6,6 +6,15 @@ class ContactRequestsController < ApplicationController
 
   def create
     @contact_request = ContactRequest.new(contact_request_params)
+
+    if @contact_request.save
+      flash[:success] = "Your request has been sent, someone will be in contact within 24 hours."
+      ContactRequestMailer.send_to_admin(@contact_request.id).deliver
+      redirect_to quote_request_path
+    else
+      flash[:error] = "Please resolve the errors below and try again."
+      render :new
+    end
   end
 
   private

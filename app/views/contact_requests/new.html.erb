@@ -3,30 +3,47 @@
 
   <div class="row">
     <div class="span6">
-      <%= form_for @contact_request, url: create_quote_request_path, method: :post, class: 'form' do |f| %>
+      <%= form_for @contact_request, url: create_quote_request_path, method: :post, class: 'form', data: { validate: 'parsley' } do |f| %>
+        <% if @contact_request.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@contact_request.errors.count, "error") %> prohibited request from being sent:</h2>
+
+            <ul>
+            <% @contact_request.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
         <div class="form-group">
           <%= f.label :first_name %>
-          <%= f.text_field :first_name, class: 'form-control' %>
+          <%= f.text_field :first_name, class: 'form-control', required: true, data: { 'parsley-required-message': 'Please enter your first name.' } %>
         </div>
 
         <div class="form-group">
           <%= f.label :last_name %>
-          <%= f.text_field :last_name, class: 'form-control' %>
+          <%= f.text_field :last_name, class: 'form-control', required: true, data: { 'parsley-required-message': 'Please enter your last name.' } %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :company_name, 'Company or Organization' %>
+          <%= f.text_field :company_name, class: 'form-control', required: false %>
         </div>
 
         <div class="form-group">
           <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
+          <%= f.email_field :email, class: 'form-control', required: true, data: { 'parsley-required-message': 'Please enter an email we can respond to you at.', 'parsley-type': 'email' } %>
         </div>
 
         <div class="form-group">
           <%= f.label :job_type %>
-          <%= f.select :job_type, options_for_select(['Commercial', 'Residential']), { include_blank: true }, class: 'form-control' %>
+          <%= f.select :job_type, options_for_select(['Commercial', 'Residential']), { include_blank: true }, class: 'form-control', required: true, data: { 'parsley-required-message': 'Please pick what type of job this is for.' } %>
         </div>
 
         <div class="form-group">
           <%= f.label :message %>
-          <%= f.text_area :message, rows: 10, class: 'form-control' %>
+          <%= f.text_area :message, rows: 10, class: 'form-control', required: true, data: { 'parsley-minlength': '20', 'parsley-minlength-message': 'Please include at least 20 characters.', 'parsley-required-message': 'Please provide some helpful details.' } %>
         </div>
 
         <%= f.submit 'Submit Request', style: 'background: #29c06d; color: #FFF; padding: 6px 9px; border-radius: 2px;' %>
