@@ -206,8 +206,6 @@ jQuery('.percentage').easyPieChart({
 	var currentWindowWidth = jQuery(window).width();
 
   $(document).ready(function() {
-    jQuery('div.maskImage').css({ opacity:0, top:0 });
-
     $('.portfolio_blocks_wrap .image-wrap').each(function(index, element) {
       var imageLink = $(element).find('.image-link');
       var currentImage = imageLink.find('img[data-timeline="after"]');
@@ -224,13 +222,6 @@ jQuery('.percentage').easyPieChart({
   });
 
 // ----------------------------------------------------- ANIMATIONS
-
-  jQuery('.portfolio_blocks_wrap .item').each(function(i){
-  	var popupItem = jQuery(this)
-  	if (!popupItem.hasClass('mypassion-animation')) {
-  		setTimeout(function(){ popupItem.addClass('mypassion-animation') }, (i * 200));
-  	}
-  });
 
   jQuery('.og-grid li').each(function(i){
   	var popupItem = jQuery(this)
@@ -254,39 +245,10 @@ jQuery('.percentage').easyPieChart({
   	}
   });
 
-	jQuery('.pricing-table .pricing').each(function(i){
-		var popupItem = jQuery(this)
-		if (!popupItem.hasClass('mypassion-animation')) {
-			setTimeout(function(){ popupItem.addClass('mypassion-animation') }, (i * 200));
-		}
-	});
-
-	jQuery('.timeline li').each(function(i){
-		var popupItem = jQuery(this)
-		if (!popupItem.hasClass('mypassion-animation')) {
-			setTimeout(function(){ popupItem.addClass('mypassion-animation') }, (i * 200));
-		}
-	});
-
 	jQuery(this).each(function(i){
 		var popupItem = jQuery(this)
 		if (!popupItem.hasClass('mypassion-animation')) {
 			setTimeout(function(){ popupItem.addClass('mypassion-animation') }, (i * 200));
-		}
-	});
-
-
-  jQuery(".social-list li").each(function(i){
-  	var popupItem = jQuery(this)
-  	if (!popupItem.hasClass('mypassion-animation')) {
-  		setTimeout(function(){ popupItem.addClass('mypassion-animation') }, (i * 50));
-  	}
-  });
-
-	jQuery(".showcase>div.add-animation").each(function(i){
-		var popupItem = jQuery(this)
-		if (!popupItem.hasClass('mypassion-animation')) {
-			setTimeout(function(){ popupItem.addClass('mypassion-animation') }, (i * 50));
 		}
 	});
 
