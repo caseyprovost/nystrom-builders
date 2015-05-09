@@ -12,7 +12,7 @@ body{
   line-height:1.4;
   font-family:'Pt-Sans', Arial, sans-serif;
   height:auto;
-  background:url(/assets/bg.jpg) no-repeat fixed;
+  background: url(asset-url('bg.jpg')) no-repeat fixed;
   background-size:cover;
 }
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {

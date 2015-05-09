@@ -78,7 +78,7 @@ html {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
-  background:#29c06d url(/assets/ui.totop.png) no-repeat center;
+  background:#29c06d url(asset-url('ui.totop.png')) no-repeat center;
   z-index:99999999999;
   border:1px solid;
   *border: 0;
@@ -104,7 +104,7 @@ html {
 }
 
 #toTopHover {
-  background:url(/assets/ui.totop.png) no-repeat left -51px;
+  background: url(asset-url('ui.totop.png')) no-repeat left -51px;
   width:51px;
   height:51px;
   overflow:hidden;
@@ -589,7 +589,7 @@ html {
   padding:10px 0;
 }
 .entrytitle {
-  background: url(asset-path('assets/title.png')) no-repeat center bottom;
+  background: url(asset-url('title.png')) no-repeat center bottom;
   padding-bottom:25px;
   margin-bottom:30px;
   text-align:center;
@@ -2728,7 +2728,7 @@ p.team-social{
   padding:10px 0;
   width:100%;
   float:left;
-  background:url(asset-path('title.png')) no-repeat center;
+  background:url(asset-url('title.png')) no-repeat center;
 }
 .icon-wrap-2{
   width:105px;
