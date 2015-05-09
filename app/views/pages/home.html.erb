@@ -10,7 +10,7 @@
           <p>
             We will skillfully mend your damaged or out-dated properties.
           </p>
-          <%= link_to 'Read More', '#', class: 'btn-theme' %>
+          <%= link_to 'Talk to us', quote_request_path, class: 'btn-theme' %>
         </div>
         <div class="span4">
           <div class="icon-wrap-5">
@@ -20,7 +20,7 @@
           <p>
             We will work with the insurance companies so you don't have to.
           </p>
-          <a href="#" class="btn-theme">Read More</a>
+          <%= link_to 'Talk to us', quote_request_path, class: 'btn-theme' %>
         </div>
         <div class="span4">
           <div class="icon-wrap-5">
@@ -30,7 +30,7 @@
           <p>
             Call us if you need new roofs, dry wall, or anything else.
           </p>
-          <a href="#" class="btn-theme">Read More</a>
+          <%= link_to 'Talk to us', quote_request_path, class: 'btn-theme' %>
         </div>
       </div>
     </div>
@@ -94,14 +94,17 @@
           aliquam non id est. Quisque pretium suscipit faucibus. Fusce vestibulum mollis interdum. Lorem ipsum dolor sit amet,
           consectetur adipiscing elit.
         </p>
-        <br/>
         <p>
           In sodales dapibus dui, sed iaculis metus facilisis sed. Etiam scelerisque molestie purus vel mollis. Mauris
           dapibus quam id turpis dignissim rutrum. Phase ellus placerat nunc in nulla pretium pellen tesque. Aliquam erat
           volutpat. In nec enim dui, in hendrerit enim.
         </p>
-        <br/><br/>
-        <p><a href="#" class="btn-theme btn-theme-large"><i class="icon-login-1 left"></i>View More</a></p>
+        <br/>
+        <p>
+          <%= link_to quote_request_path, class: "btn-theme btn-theme-large" do %>
+            Partner with us
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
