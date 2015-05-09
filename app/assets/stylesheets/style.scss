@@ -3598,3 +3598,13 @@ ul.children li{
   z-index: 999;
   left: 0;
 }
+
+.certs-container .span3 {
+  height: 200px;
+}
+
+.certs-container img {
+  display: inline-block;
+  max-height: 150px;
+  vertical-align: middle;
+}
