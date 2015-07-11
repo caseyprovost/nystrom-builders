@@ -2,10 +2,8 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
-
-gem 'mongo_mapper'
-gem 'bson_ext'
+gem 'rails', '4.2.2'
+gem 'pg'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -24,13 +22,19 @@ gem 'turbolinks'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sanitize'
 gem 'font-awesome-rails'
+gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'pundit'
+gem 'bcrypt'
+gem 'activerecord-session_store'
+gem 'paranoia', '~> 2.0'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'unicorn'
   gem 'quiet_assets'
-  gem 'letter_opener'
+  gem 'letter_opener_web'
 end
 
 group :development, :test do
@@ -39,6 +43,7 @@ group :development, :test do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
 end
 
 group :test do
@@ -49,4 +54,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-

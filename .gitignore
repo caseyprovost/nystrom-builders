@@ -35,3 +35,6 @@ bower.json
 .env
 .env.test
 .env.cucumber
+
+config/aws.yml
+config/database.yml

@@ -28,7 +28,7 @@ module NavigationHelper
     @menu_links = [
       MenuLink.new(text: 'Home', href: root_path),
       MenuLink.new(text: 'What We Do', href: about_path),
-#      MenuLink.new(text: 'Projects', href: projects_path),
+      MenuLink.new(text: 'Projects', href: projects_path),
       MenuLink.new(text: 'Get a Quote', href: quote_request_path)
     ]
   end

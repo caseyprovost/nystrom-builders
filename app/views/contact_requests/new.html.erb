@@ -38,7 +38,7 @@
 
         <div class="form-group">
           <%= f.label :job_type %>
-          <%= f.select :job_type, options_for_select(['Commercial', 'Residential']), { include_blank: true }, class: 'form-control', required: true, data: { 'parsley-required-message': 'Please pick what type of job this is for.' } %>
+          <%= f.select :job_type, options_for_select(ContactRequest::JOB_TYPES), { include_blank: true }, class: 'form-control', required: true, data: { 'parsley-required-message': 'Please pick what type of job this is for.' } %>
         </div>
 
         <div class="form-group">
