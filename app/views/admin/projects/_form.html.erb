@@ -1,0 +1,54 @@
+<%= simple_form_for project, url: project.id? ? admin_project_path(project) : admin_projects_path, html: { multipart: true } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :display_on_projects_page %>
+  <%= f.input :summary %>
+  <fieldset>
+    <legend>Photos</legend>
+    <%= link_to 'Add Another Photo', '#', data: { action: "add-photo" } %>
+
+    <div class="photos-wrapper">
+      <%= f.fields_for :photos do |pf| %>
+        <div class="photo" data-id="<%= pf.object.id %>">
+          <%= pf.input :photo %>
+          <%= pf.hidden_field :_destroy %>
+          <% if pf.object.id? %>
+            <%= image_tag pf.object.photo.url(:small) %>
+          <% end %>
+          <%= link_to 'Delete', '#', data: { action: "delete-photo" } %>
+        </div>
+      <% end %>
+    </div>
+  </fieldset>
+  <%= f.button :submit, project.id? ? 'Update Porject' : 'Add Project' %>
+<% end %>
+
+<script type="text/javascript">
+  function addPhoto() {
+    var link = '<%= link_to "delete", "#", data: { action: "delete-photo" } %>';
+    var destroyInput = '<input type="hidden" name="project[photos_attributes][0][_destroy]" value="project_photos_attributes_0__destroy" />';
+    $('.photos-wrapper').prepend('<div class="photo"><div class="form-group file optional project_photos_photo"><label class="file optional control-label" for="project_photos_attributes_0_photo"></label><input class="file optional" type="file" name="project[photos_attributes][0][photo]" id="project_photos_attributes_0_photo" value="" />' + destroyInput + '</div>' + link + '</div>');
+  };
+
+  function deletePhoto(link) {
+    if (link.data('id') != "") {
+      // handles already saved photos
+      link.parents('.photo').hide();
+      link.parents('.photo').find('input[type="hidden"]').val("true");
+    } else {
+      //handles new entries
+      link.parents('.photo').hide();
+    }
+  }
+
+  $(document).ready(function() {
+    $('[data-action="add-photo"]').on('click', function(event) {
+      event.preventDefault();
+      addPhoto();
+    });
+
+    $('[data-action="delete-photo"]').on('click', function(event) {
+      event.preventDefault();
+      deletePhoto($(event.target));
+    });
+  });
+</script>

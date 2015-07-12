@@ -9,10 +9,20 @@
 
 <!-- Body Wrapper -->
   <div class="body-wrapper">
+    <div id="user_nav">
+      <% if current_user %>
+        Logged in as <%= current_user.name %>.
+        <%= link_to 'projects', admin_projects_path %>
+        <%= link_to 'Log out', admin_logout_path %>
+      <% else %>
+        <%= link_to 'log in', admin_login_path %>
+      <% end %>
+    </div>
+
     <% if flash.any? %>
       <div class="fixed-top">
         <div class="row">
-          <div style="margin-left: 30px;">
+          <div style="margin-left: 30px; text-align: center;">
             <%= flash_messages do |type, text| %>
               <div class="alert alert-dismissable alert-<%= type == :error ? 'danger' : type %>">
                 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -22,23 +32,6 @@
           </div>
         </div>
       </div>
-    <% end %>
-
-    <!-- Header -->
-      <%#= render partial: '/shared/header' %>
-    <!-- /Header -->
-
-    <div id="user_nav">
-      <% if current_user %>
-        Logged in as <%= current_user.name %>.
-        <%= link_to 'Log out', admin_logout_path %>
-      <% else %>
-        <%= link_to 'log in', admin_login_path %>
-      <% end %>
-    </div>
-
-    <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
 
     <section id="content">

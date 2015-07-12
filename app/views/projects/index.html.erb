@@ -1,10 +1,24 @@
-<div class="fullblock blockwhite">
-  <h2>Check Out Our Projects</h2>
-  <section class="container">
-    <div class="row">
-      <% @project.photos.each do |photo| %>
-        <div class="span4">
-        </div>
-      <% end %>
-    </div>
-  </section>
+<div class="container" style="margin-top: 20px;">
+  <div class="fullblock blockwhite">
+    <h2>Check Out Our Projects</h2>
+    <section class="container">
+      <div class="row project-list" style="margin-top: 30px;">
+        <% @projects.each do |project| %>
+          <div class="span4 project">
+            <%= link_to project_path(project) do %>
+              <h3><%= project.name %></h3>
+              <%= image_tag project.photos.any? ? project.photos.first.photo.url(:small) : 'no-project-image.png' %>
+              <p style="margin-top: 10px;">
+                <% if project.summary.present? %>
+                  <%= project.summary %>
+                <% else %>
+                  No summary available
+                <% end %>
+              </p>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </div>
+</div>

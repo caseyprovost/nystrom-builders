@@ -13,23 +13,29 @@
  *= require bootstrap
  *= require bootstrap-responsive
  *= require font-awesome
- *= require jquery.fancybox
- *= require flexslider
- *= require superfish
- *= require ptsans
- *= require base
- *= require animation
- *= require style
  *= require_self
  */
 
- .project-list .project > a {
-   display: block;
-   padding: 10px 0px;
-   text-align: center;
- }
+#user_nav {
+  margin-bottom: 50px;
+}
 
-.project-list .project a:hover {
-  background: #f3f3f3;
-  border: #efefef;
+
+.photo {
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+.photo > a {
+  /*float: right;*/
+}
+
+.photo:last-child {
+  margin-bottom: 40px;
+}
+
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
 }

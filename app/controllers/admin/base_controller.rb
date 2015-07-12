@@ -13,7 +13,7 @@ class Admin::BaseController < ApplicationController
   end
 
   # @private
-  def authorize!
-    redirect_to login_url, alert: "Not authorized" if current_user.nil?
+  def authenticate!
+    redirect_to admin_login_url, alert: "Not authorized" if current_user.nil?
   end
 end

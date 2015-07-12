@@ -28,6 +28,9 @@ gem 'pundit'
 gem 'bcrypt'
 gem 'activerecord-session_store'
 gem 'paranoia', '~> 2.0'
+gem 'simple_form'
+gem 'mini_magick'
+gem 'fog'
 
 group :development do
   gem 'better_errors'
@@ -44,6 +47,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
+  gem 'dotenv-rails'
 end
 
 group :test do

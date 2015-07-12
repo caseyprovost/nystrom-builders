@@ -38,3 +38,4 @@ bower.json
 
 config/aws.yml
 config/database.yml
+public/uploads/*

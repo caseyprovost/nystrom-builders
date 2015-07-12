@@ -32,4 +32,9 @@ Rails.application.config.assets.precompile += %w(
   PTS56F-webfont.eot
   PTS56F-webfont.woff
   PTS56F-webfont.ttf
+  PTS55F-webfont.svg
+  PTS75F-webfont.svg
+  PTS76F-webfont.svg
+  PTS56F-webfont.svg
   )
+Rails.application.config.assets.precompile += %w( admin.css admin.js )
