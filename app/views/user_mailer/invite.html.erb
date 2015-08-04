@@ -1,0 +1,11 @@
+<%= @user.first_name %> <%= @user.last_name %>,
+
+An admin from NystromBuilders LLC has granted you access to the admin portal.
+
+You will now be able to do things like:
+
+* add projects
+* add photos to existing projects
+* invite other users
+
+<%= link_to 'confirm my invite', confirm_invite_path(@user.reset_password_token) %>

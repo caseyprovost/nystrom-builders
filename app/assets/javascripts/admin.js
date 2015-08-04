@@ -13,12 +13,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//= require bootstrap-2.3.1
 //= require modernizr.custom
 //= require html5
 //= require jquery.form
 //= require sugar
 //= require parsley
+//= require_tree ./admin/modules
+//= require_tree ./admin/pages
 //= require_self
 
 $(document).ready(function() {

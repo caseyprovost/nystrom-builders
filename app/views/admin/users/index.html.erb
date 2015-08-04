@@ -1,0 +1,46 @@
+<% content_for :page_title, 'Users' %>
+<% content_for :page_button do %>
+  <%= link_to 'Add a new user', new_admin_user_path, class: 'btn btn-success pull-right' %>
+<% end %>
+
+<table role="table" class="table table-striped">
+  <thead>
+    <tr>
+      <th>
+        First Name
+      </th>
+      <th>
+        Last Name
+      </th>
+      <th>
+        Username
+      </th>
+      <th>
+        Email
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.first_name %>
+        </td>
+        <td>
+          <%= user.last_name %>
+        </td>
+        <td>
+          <%= user.username %>
+        </td>
+        <td>
+          <%= user.email %>
+        </td>
+        <td>
+          <%= link_to 'Edit', edit_admin_user_path(user) %> |
+          <%= link_to 'Delete', admin_user_path(user), method: 'delete', data: { confirm: 'Are you sure you want to remove this user?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -11,7 +11,11 @@ module NavigationHelper
     end
 
     def current?
-      current_url == href
+      if href == '/'
+        current_url == href
+      else
+        current_url.include?(href)
+      end
     end
 
     def render

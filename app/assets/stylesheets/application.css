@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
+ *= require bootstrap-2.3.1
  *= require bootstrap-responsive
  *= require font-awesome
  *= require jquery.fancybox
@@ -25,11 +25,11 @@
 
  .project-list .project > a {
    display: block;
-   padding: 10px 0px;
+   padding: 10px;
    text-align: center;
  }
 
 .project-list .project a:hover {
-  background: #f3f3f3;
+  background: #FAFAFA;
   border: #efefef;
 }

@@ -9,14 +9,38 @@
 
 <!-- Body Wrapper -->
   <div class="body-wrapper">
-    <div id="user_nav">
-      <% if current_user %>
-        Logged in as <%= current_user.name %>.
-        <%= link_to 'projects', admin_projects_path %>
-        <%= link_to 'Log out', admin_logout_path %>
-      <% else %>
-        <%= link_to 'log in', admin_login_path %>
-      <% end %>
+    <% if current_user %>
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <a class="navbar-brand" href="<%= admin_dashboard_path %>">NystromBuilders | <b>Admin</b></a>
+              <ul class="nav navbar-nav">
+                <li class="<%= controller.controller_name == 'projects' ? 'active' : '' %>">
+                  <%= link_to 'projects', admin_projects_path %>
+                </li>
+                <li class="<%= controller.controller_name == 'users' ? 'active' : '' %>">
+                  <%= link_to 'users', admin_users_path %>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="navbar-text navbar-right">
+            <b><%= current_user.name %></b> | <%= link_to 'Log out', admin_logout_path %>.
+          </p>
+        </div>
+      </nav>
+    <% end %>
+
+    <div class="container" style="margin-bottom: 20px;">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="page-title"><%= yield :page_title %></h1>
+        </div>
+        <div class="col-md-6">
+          <%= yield :page_button %>
+        </div>
+      </div>
     </div>
 
     <% if flash.any? %>
@@ -34,9 +58,15 @@
       </div>
     <% end %>
 
-    <section id="content">
-      <%= yield %>
+    <section class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+        </div>
+      </div>
     </section>
-</div>
+    <br>
+    <br>
+  </div>
 </body>
 </html>

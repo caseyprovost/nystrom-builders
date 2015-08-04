@@ -4,7 +4,7 @@
     <section class="container">
       <div class="row project-list" style="margin-top: 30px;">
         <% @projects.each do |project| %>
-          <div class="span4 project">
+          <div class="span3 project">
             <%= link_to project_path(project) do %>
               <h3><%= project.name %></h3>
               <%= image_tag project.photos.any? ? project.photos.first.photo.url(:small) : 'no-project-image.png' %>

@@ -10,11 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
- *= require bootstrap-responsive
  *= require font-awesome
  *= require_self
  */
+
+@import 'bootstrap';
 
 #user_nav {
   margin-bottom: 50px;
@@ -38,4 +38,12 @@
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
+}
+
+.page-title {
+  margin: 0;
+}
+
+.navbar-collapse {
+  padding-left: 0px;
 }

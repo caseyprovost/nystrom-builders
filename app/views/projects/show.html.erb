@@ -9,21 +9,24 @@
           </p>
         </div>
       <% end %>
-      <div class="row" style="margin-top: 30px;">
-        <% if @project.photos.any? %>
-          <% @project.photos.each do |photo| %>
-            <div class="span4">
-              <%= image_tag photo.photo.url(:small) %>
-            </div>
-          <% end %>
-        <% else %>
-          <div class="span12">
-            <p>
-              There are no photos for this project
-            </p>
+
+      <% if @project.photos.any? %>
+        <% @project.photos.each_slice(4) do |slice| %>
+          <div class="row" style="margin-top: 30px;">
+            <% slice.each do |photo| %>
+              <div class="span3">
+                <%= image_tag photo.photo.url(:small) %>
+              </div>
+            <% end %>
           </div>
         <% end %>
-      </div>
+      <% else %>
+        <div class="span12">
+          <p>
+            There are no photos for this project
+          </p>
+        </div>
+      <% end %>
     </section>
   </div>
 </div>

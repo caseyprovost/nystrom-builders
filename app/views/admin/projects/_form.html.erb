@@ -1,9 +1,24 @@
 <%= simple_form_for project, url: project.id? ? admin_project_path(project) : admin_projects_path, html: { multipart: true } do |f| %>
-  <%= f.input :name %>
-  <%= f.input :display_on_projects_page %>
-  <%= f.input :summary %>
-  <fieldset>
+  <div class="col-md-6">
+    <%= f.input :name %>
+    <%= f.input :display_on_projects_page %>
+    <%= f.input :summary, label: 'Summary (100 characters or less)' %>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <fieldset class="col-md-12">
     <legend>Photos</legend>
+    <div class="alert alert-info">
+      <h4>Help</h4>
+      <ul>
+        <li>Aim for photos with a decent resolution</li>
+        <li>The smaller the image size (kb vs mb) the better</li>
+        <li>Larger size images will take longer to upload</li>
+        <li>The best ratio for images is 3:2 (example 75x50)</li>
+      </ul>
+    </div>
+
     <%= link_to 'Add Another Photo', '#', data: { action: "add-photo" } %>
 
     <div class="photos-wrapper">
@@ -12,43 +27,17 @@
           <%= pf.input :photo %>
           <%= pf.hidden_field :_destroy %>
           <% if pf.object.id? %>
-            <%= image_tag pf.object.photo.url(:small) %>
+            <%= image_tag pf.object.photo.url(:thumb) %>
           <% end %>
           <%= link_to 'Delete', '#', data: { action: "delete-photo" } %>
         </div>
       <% end %>
     </div>
   </fieldset>
-  <%= f.button :submit, project.id? ? 'Update Porject' : 'Add Project' %>
+
+  <%= f.button :submit, project.id? ? 'Update Project' : 'Add Project', class: 'btn btn-success', data: { action: 'update-project' } %>
 <% end %>
 
 <script type="text/javascript">
-  function addPhoto() {
-    var link = '<%= link_to "delete", "#", data: { action: "delete-photo" } %>';
-    var destroyInput = '<input type="hidden" name="project[photos_attributes][0][_destroy]" value="project_photos_attributes_0__destroy" />';
-    $('.photos-wrapper').prepend('<div class="photo"><div class="form-group file optional project_photos_photo"><label class="file optional control-label" for="project_photos_attributes_0_photo"></label><input class="file optional" type="file" name="project[photos_attributes][0][photo]" id="project_photos_attributes_0_photo" value="" />' + destroyInput + '</div>' + link + '</div>');
-  };
-
-  function deletePhoto(link) {
-    if (link.data('id') != "") {
-      // handles already saved photos
-      link.parents('.photo').hide();
-      link.parents('.photo').find('input[type="hidden"]').val("true");
-    } else {
-      //handles new entries
-      link.parents('.photo').hide();
-    }
-  }
-
-  $(document).ready(function() {
-    $('[data-action="add-photo"]').on('click', function(event) {
-      event.preventDefault();
-      addPhoto();
-    });
-
-    $('[data-action="delete-photo"]').on('click', function(event) {
-      event.preventDefault();
-      deletePhoto($(event.target));
-    });
-  });
+  var page = new NewProjectPage();
 </script>

@@ -10,7 +10,7 @@ class Admin::SessionsController < Admin::BaseController
 
     if @form.save
       session[:user_id] = @form.user.id
-      redirect_to admin_dashboard_url, notice: 'Logged in!'
+      redirect_to admin_projects_url, notice: 'Logged in!'
     else
       flash.now.alert = 'Invalid email or password'
       render 'new'
