@@ -33,3 +33,18 @@
   background: #FAFAFA;
   border: #efefef;
 }
+
+#contact-us-banner {
+  display: inline-block;
+  margin-top: 13%;
+  margin-left: 8%;
+  padding: 10px 10px 0px 10px;
+  opacity: 0.6;
+  background: #29c06d;
+  z-index: 999;
+}
+
+#contact-us-banner p {
+  font-size: 2rem;
+  color: #fff;
+}
