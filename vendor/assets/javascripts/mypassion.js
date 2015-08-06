@@ -153,11 +153,6 @@ jQuery('.percentage').easyPieChart({
 	});
 
 // -----------------------------------------------------  DEVICE MENU TOGGLE
-	jQuery('.nav-toggle a').click(function(){
-		jQuery('.mobile-menu').stop(true,true).slideToggle(500);
-		return false;
-	});
-	jQuery('.mobile-menu ul li a').prepend('<i class="icon-right-dir"></i>');
 
 
 
@@ -293,5 +288,3 @@ jQuery('.percentage').easyPieChart({
 	});
 	marker.setMap(map);
 });*/
-
-

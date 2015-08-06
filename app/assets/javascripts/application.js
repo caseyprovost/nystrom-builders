@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap
 //= require ui
 //= require jquery.fancybox
@@ -38,5 +37,9 @@
 
 $(document).ready(function() {
   $('form[data-validate="parsley"]').parsley();
-});
 
+  $('.nav-toggle > a').on('click', function() {
+    jQuery('.mobile-menu').stop(true, true).slideToggle(500);
+  });
+  jQuery('.mobile-menu ul li a').prepend('<i class="icon-right-dir"></i>');
+});
