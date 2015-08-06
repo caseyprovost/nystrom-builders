@@ -1,5 +1,5 @@
 class UserMailer < ActionMailer::Base
-  default to: Efrom: ENV['DEFAULT_FROM_EMAIL']
+  default from: ENV['DEFAULT_FROM_EMAIL']
 
   def invite(user_id)
     @user = User.find(user_id)
