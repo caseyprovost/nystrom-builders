@@ -19,7 +19,6 @@
 //= require jquery.form
 //= require sugar
 //= require parsley
-//= require_tree ./admin/modules/
 //= require_tree ./admin/pages/
 //= require_self
 
