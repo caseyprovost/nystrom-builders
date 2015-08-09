@@ -5,17 +5,22 @@
         <h1 class="widget-title">Get a hold of us</h1>
           <div class="contact-widget">
             <div class="row">
-              <div class="span4">
+              <div class="span3">
                 <%= fa_icon('phone') %>
                 <p>Phone: 616-293-2488</p>
               </div>
-              <div class="span4">
+              <div class="span3">
                 <%= fa_icon('envelope') %>
-                <p>Email: nystrombuilders@gmail.com</p>
+                <p><%= mail_to('nystrombuilders@gmail.com') %></p>
               </div>
-              <div class="span4">
+              <div class="span3">
                 <%= fa_icon('home') %>
                 <p>5995 12 Mile Rd Ne, Rockford Mi 49341</p>
+              </div>
+
+              <div class="span3">
+                <%= fa_icon('facebook') %>
+                <%= link_to 'Check us out on Facebook', 'https://www.facebook.com/pages/Nystrom-Builders-LLC/36860627634', style: 'margin-top: 8px; display: inline-block;' %>
               </div>
             </div>
           </div>
