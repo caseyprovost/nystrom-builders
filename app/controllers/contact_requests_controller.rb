@@ -21,7 +21,7 @@ class ContactRequestsController < ApplicationController
 
   # @private
   def contact_request_params
-    new_params = params.require(:contact_request).permit(:first_name, :last_name, :email, :message)
+    new_params = params.require(:contact_request).permit(:first_name, :last_name, :email, :message, :job_type)
     new_params[:message] = Sanitize.clean(new_params[:message])
     new_params
   end
